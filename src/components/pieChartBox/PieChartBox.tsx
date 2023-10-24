@@ -5,7 +5,7 @@ import { pieChartData } from "../../data"
 export const PieChartBox = () => {
   return (
     <div className="pieChartBox">
-        <h1>Leads by Source</h1>
+        <h1>Distribuição de Condições Climáticas</h1>
         <div className="chart">
             <ResponsiveContainer width="99%" height={300}>
                 <PieChart>
@@ -34,7 +34,7 @@ export const PieChartBox = () => {
                         <div className="dot" style={{ backgroundColor:item.color}}/>
                         <span>{item.name}</span>
                     </div>
-                    <span>{item.value}</span>
+                    <span>{item.value} dias</span>
                 </div>
             ))}
         </div>

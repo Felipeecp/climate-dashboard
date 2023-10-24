@@ -4,52 +4,52 @@ import "./bigChartBox.scss"
 const data = [
     {
       name: "Sun",
-      books: 4000,
-      clothes: 2400,
-      electronic: 2400,
+      "Sensor A": 27,
+      "Sensor B": 21,
+      "Sensor C": 33,
     },
     {
       name: "Mon",
-      books: 3000,
-      clothes: 1398,
-      electronic: 2210,
+      "Sensor A": 22,
+      "Sensor B": 25,
+      "Sensor C": 28,
     },
     {
       name: "Tue",
-      books: 2000,
-      clothes: 9800,
-      electronic: 2290,
+      "Sensor A": 25,
+      "Sensor B": 23,
+      "Sensor C": 30,
     },
     {
       name: "Wed",
-      books: 2780,
-      clothes: 3908,
-      electronic: 2000,
+      "Sensor A": 26,
+      "Sensor B": 24,
+      "Sensor C": 30,
     },
     {
       name: "Thu",
-      books: 1890,
-      clothes: 4800,
-      electronic: 2181,
+      "Sensor A": 24,
+      "Sensor B": 26,
+      "Sensor C": 29,
     },
     {
       name: "Fri",
-      books: 2390,
-      clothes: 3800,
-      electronic: 2500,
+      "Sensor A": 27,
+      "Sensor B": 23,
+      "Sensor C": 31,
     },
     {
       name: "Sat",
-      books: 3490,
-      clothes: 4300,
-      electronic: 2100,
+      "Sensor A": 25,
+      "Sensor B": 21,
+      "Sensor C": 27,
     },
   ];
   
 export const BigChartBox = () => {
   return (
     <div className="bigChartBox">
-        <h1>Revenue Analytics</h1>
+        <h1>Comparação entre Locais</h1>
         <div className="chart">
             <ResponsiveContainer width="99%" height="100%">
                 <AreaChart
@@ -60,21 +60,21 @@ export const BigChartBox = () => {
                     <Tooltip />
                     <Area 
                         type="monotone" 
-                        dataKey="electronic" 
+                        dataKey="Sensor A" 
                         stackId="1" 
                         stroke="#8884d8" 
                         fill="#8884d8" 
                     />
                     <Area 
                         type="monotone" 
-                        dataKey="clothes" 
+                        dataKey="Sensor B" 
                         stackId="1" 
                         stroke="#82ca9d" 
                         fill="#82ca9d" 
                     />
                     <Area 
                         type="monotone" 
-                        dataKey="books" 
+                        dataKey="Sensor C" 
                         stackId="1" 
                         stroke="#ffc658" 
                         fill="#ffc658" 

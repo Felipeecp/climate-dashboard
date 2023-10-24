@@ -4,7 +4,7 @@ import { topDealUsers } from '../../data'
 export const TopBox = () => {
   return (
     <div className="topBox">
-        <h1>Top Deals</h1>
+        <h1>Sensores</h1>
         <div className="list">
             {topDealUsers.map(user=>(
                 <div className="listItem" key={user.id}>
@@ -15,7 +15,7 @@ export const TopBox = () => {
                             <span className="email">{user.email}</span>
                         </div>
                     </div>
-                    <span className="amount">${user.amount}</span>
+                    <span className="amount">{user.amount}</span>
                 </div>
             ))}
         </div>
