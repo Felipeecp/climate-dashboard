@@ -3,7 +3,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="logo">
-        <img src="logo.svg" alt="" />
+        <img src="climate-change.svg" alt="" className="imgLogo"/>
         <span>Climate Admin</span>
       </div>
       <div className="icons">

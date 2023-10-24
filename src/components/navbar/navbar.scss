@@ -8,8 +8,14 @@
   .logo {
     display: flex;
     align-items: center;
-    foot-weight: bold;
+    font-weight: bold;
     gap: 10px;
+
+    .imgLogo {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
   }
   .icons {
     display: flex;

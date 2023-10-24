@@ -13,19 +13,19 @@ export const menu = [
         id: 2,
         title: "Sensores",
         url: "/users/1",
-        icon: "user.svg",
+        icon: "sensor.svg",
       },
       {
         id: 3,
         title: "Locais",
         url: "/products",
-        icon: "product.svg",
+        icon: "map.svg",
       },
       {
         id: 4,
         title: "Avisos",
         url: "/orders",
-        icon: "order.svg",
+        icon: "notice.svg",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const topDealUsers = [
 
 export const chartBoxUser = {
   color: "#8884d8",
-  icon: "/userIcon.svg",
+  icon: "/climate-change.svg",
   title: "Temperatura - Sensor A",
   number: "31 ºC",
   dataKey: "temperatura",
@@ -199,7 +199,7 @@ export const chartBoxUser = {
 
 export const chartBoxProduct = {
   color: "skyblue",
-  icon: "/productIcon.svg",
+  icon:"/climate-change.svg",
   title: "Umidade - Sensor A",
   number: "68%",
   dataKey: "umidade",
@@ -216,7 +216,7 @@ export const chartBoxProduct = {
 };
 export const chartBoxRevenue = {
   color: "teal",
-  icon: "/revenueIcon.svg",
+  icon: "/climate-change.svg",
   title: "Temperatura - Sensor C",
   number: "22 ºC",
   dataKey: "temperatura",
@@ -233,7 +233,7 @@ export const chartBoxRevenue = {
 };
 export const chartBoxConversion = {
   color: "gold",
-  icon: "/conversionIcon.svg",
+  icon: "/climate-change.svg",
   title: "Umidade - Sensor B",
   number: "65%",
   dataKey: "umidade",
