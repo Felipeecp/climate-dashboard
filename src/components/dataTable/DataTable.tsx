@@ -21,10 +21,16 @@ const DataTable = (props: Props) => {
       return (
         <div className="actions">
           <Link to={`/${props.slug}/${params.row.cod_wmo}`}>
-            <img src="/view.svg" alt="" />
+            <img
+              src="https://raw.githubusercontent.com/Felipeecp/climate-dashboard/85611ebedf21271ee2ffc950b2a71267e563d824/view.svg"
+              alt=""
+            />
           </Link>
           <div className="delete" onClick={() => handleDelete(params.row.id)}>
-            <img src="/delete.svg" alt="" />
+            <img
+              src="https://raw.githubusercontent.com/Felipeecp/climate-dashboard/85611ebedf21271ee2ffc950b2a71267e563d824/delete.svg"
+              alt=""
+            />
           </div>
         </div>
       );

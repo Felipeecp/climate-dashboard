@@ -6,6 +6,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Sensor from "./pages/sensors/Sensor";
 import "./styles/global.scss";
+import Locais from "./pages/locais/Locais";
+import Avisos from "./pages/avisos/Avisos";
 
 function App() {
   const Layout = () => {
@@ -37,6 +39,14 @@ function App() {
         {
           path: "/sensor",
           element: <Sensor />,
+        },
+        {
+          path: "/locais",
+          element: <Locais />,
+        },
+        {
+          path: "/avisos",
+          element: <Avisos />,
         },
       ],
     },

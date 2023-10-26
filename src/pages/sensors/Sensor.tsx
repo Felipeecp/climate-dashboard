@@ -1,6 +1,8 @@
 import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import DataTable from "../../components/dataTable/DataTable";
 import "./sensor.scss";
+import { useState } from "react";
+import Add from "../../components/Add/Add";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "Codigo do Sensor", width: 90 },
@@ -98,13 +100,15 @@ const rows = [
 ];
 
 const Sensor = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="sensor">
       <div className="info">
         <h1>Sensores</h1>
-        <button>Adicionar novo Sensor</button>
+        <button onClick={()=>setOpen(true)}>Adicionar novo Sensor</button>
       </div>
       <DataTable slug="sensores" columns={columns} rows={rows} />
+      {open && <Add slug="user" columns={columns} setOpen={setOpen}/>}
     </div>
   );
 };

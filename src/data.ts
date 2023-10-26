@@ -12,19 +12,19 @@ export const menu = [
       {
         id: 2,
         title: "Sensores",
-        url: "/sensor/1",
+        url: "/sensor",
         icon: "sensor.svg",
       },
       {
         id: 3,
         title: "Locais",
-        url: "/products",
+        url: "/locais",
         icon: "map.svg",
       },
       {
         id: 4,
         title: "Avisos",
-        url: "/orders",
+        url: "/avisos",
         icon: "notice.svg",
       },
     ],
