@@ -181,7 +181,7 @@ export const topDealUsers = [
 
 export const chartBoxUser = {
   color: "#8884d8",
-  icon: "/climate-change.svg",
+  icon: "https://raw.githubusercontent.com/Felipeecp/climate-dashboard/582797617508f5a3f6a1d2bb9af6135cdfa35815/climate-change.svg",
   title: "Temperatura - Sensor A",
   number: "31 ºC",
   dataKey: "temperatura",
@@ -199,7 +199,7 @@ export const chartBoxUser = {
 
 export const chartBoxProduct = {
   color: "skyblue",
-  icon:"/climate-change.svg",
+  icon: "https://raw.githubusercontent.com/Felipeecp/climate-dashboard/582797617508f5a3f6a1d2bb9af6135cdfa35815/climate-change.svg",
   title: "Umidade - Sensor A",
   number: "68%",
   dataKey: "umidade",
@@ -216,7 +216,7 @@ export const chartBoxProduct = {
 };
 export const chartBoxRevenue = {
   color: "teal",
-  icon: "/climate-change.svg",
+  icon: "https://raw.githubusercontent.com/Felipeecp/climate-dashboard/582797617508f5a3f6a1d2bb9af6135cdfa35815/climate-change.svg",
   title: "Temperatura - Sensor C",
   number: "22 ºC",
   dataKey: "temperatura",
@@ -233,7 +233,7 @@ export const chartBoxRevenue = {
 };
 export const chartBoxConversion = {
   color: "gold",
-  icon: "/climate-change.svg",
+  icon: "https://raw.githubusercontent.com/Felipeecp/climate-dashboard/582797617508f5a3f6a1d2bb9af6135cdfa35815/climate-change.svg",
   title: "Umidade - Sensor B",
   number: "65%",
   dataKey: "umidade",

@@ -1,30 +1,28 @@
-@import url("../../styles/variables.scss");
-
 .home {
-    height: 100%;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: minmax(100px,auto);
+  height: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  margin-bottom: 45px;
 
-  .box{
+  .box {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #384256;
     min-height: 11em;
   }
 
-  .box1{
+  .box1 {
     grid-column: span 1;
     grid-row: span 4;
   }
-  .box4{
+  .box4 {
     grid-column: span 1;
     grid-row: span 4;
   }
-  .box7{
+  .box7 {
     grid-column: span 2;
     grid-row: span 2;
   }
-  
 }

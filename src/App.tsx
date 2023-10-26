@@ -4,7 +4,7 @@ import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
-import Sensor from "./pages/users/Sensor";
+import Sensor from "./pages/sensors/Sensor";
 import "./styles/global.scss";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Outlet />
           </div>
         </div>
-        <Footer />
+          <Footer />
       </div>
     );
   };
@@ -35,7 +35,7 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/sensor",
+          path: "/climate-dashboard/sensor",
           element: <Sensor />,
         },
       ],
