@@ -20,7 +20,7 @@ function App() {
             <Outlet />
           </div>
         </div>
-          <Footer />
+        <Footer />
       </div>
     );
   };
@@ -31,11 +31,11 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: "/climate-dashboard",
+          path: "/",
           element: <Home />,
         },
         {
-          path: "/climate-dashboard/sensor",
+          path: "/sensor",
           element: <Sensor />,
         },
       ],
