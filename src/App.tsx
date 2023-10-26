@@ -1,4 +1,4 @@
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
@@ -25,7 +25,7 @@ function App() {
     );
   };
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
