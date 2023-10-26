@@ -1,4 +1,4 @@
-import { Outlet, RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createHashRouter } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
