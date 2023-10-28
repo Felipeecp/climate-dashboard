@@ -8,6 +8,7 @@ import Sensor from "./pages/sensors/Sensor";
 import "./styles/global.scss";
 import Locais from "./pages/locais/Locais";
 import Avisos from "./pages/avisos/Avisos";
+import SingleSensor from "./pages/singleSensor/SingleSensor";
 
 function App() {
   const Layout = () => {
@@ -39,6 +40,11 @@ function App() {
         {
           path: "/sensor",
           element: <Sensor />,
+        },
+        //rota para exibir as informações de cada sensor pelo ID
+        {
+          path: "/sensores/:id",
+          element: <SingleSensor  />,
         },
         {
           path: "/locais",
