@@ -20,7 +20,7 @@ const DataTable = (props: Props) => {
     renderCell: (params) => {
       return (
         <div className="actions">
-          <Link to={`/${props.slug}/${params.row.cod_wmo}`}>
+          <Link to={`/${props.slug}/${params.row.id}`}>
             <img
               src="https://raw.githubusercontent.com/Felipeecp/climate-dashboard/85611ebedf21271ee2ffc950b2a71267e563d824/view.svg"
               alt=""

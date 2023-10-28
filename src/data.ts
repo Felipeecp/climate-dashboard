@@ -736,3 +736,256 @@ export const pieChartData = [
   { name: "Frio e Seco", value: 12, color: "#FFBB28" },
   { name: "Frio e Úmido", value: 7, color: "#FF8042" },
 ];
+
+
+//adição de dados para exibir estaticamente
+export const singleSensor =
+  {
+    id: 1,
+    title: "Sensor A",
+    img: "https://www.saravati.com.br/media/catalog/product/cache/ff61517d26ace703648229d56c081b52/1/5/156519c3ae.jpg",
+    info: {
+      sensorId: "Ps5SDF1156d",
+      city: "Bairro de Fátima - São Luís",
+      state:"MA",
+      login: "27/10/2023",
+      
+    },
+    chart: {
+      dataKey: [
+        { name: "temp", color: "#82ca9d" },
+        { name: "humidity", color: "#8884d8" },
+      ],
+      data: [
+        {
+          name: "Sun",
+          temp: 37,
+          humidity: 80,
+        },
+        {
+          name: "Mon",
+          temp: 38,
+          humidity: 70,
+        },
+        {
+          name: "Tue",
+          temp: 35,
+          humidity: 85,
+        },
+        {
+          name: "Wed",
+          temp: 29,
+          humidity: 65,
+        },
+        {
+          name: "Thu",
+          temp: 42,
+          humidity: 67,
+        },
+        {
+          name: "Fri",
+          temp: 36,
+          humidity: 80,
+        },
+        {
+          name: "Sat",
+          temp: 35,
+          humidity: 77,
+        },
+      ],
+    },
+    activities: [
+      {
+        text: "36 °C - 75%",
+        time: "3 day ago",
+      },
+      {
+        text: "35 °C - 67%",
+        time: "1 week ago",
+      },
+      {
+        text: "42 °C - 85%",
+        time: "2 weeks ago",
+      },
+      {
+        text: "37 °C - 60%",
+        time: "1 month ago",
+      },
+      {
+        text: "36 °C - 77%",
+        time: "1 month ago",
+      },
+      {
+        text: "40 °C - 80%",
+        time: "2 months ago",
+      },
+    ],
+  };
+
+//adição de dados para exibir estaticamente (array)
+// export const singleSensor = 
+// [
+//   {
+//     id: 1,
+//     title: "Sensor A",
+//     img: "https://www.saravati.com.br/media/catalog/product/cache/ff61517d26ace703648229d56c081b52/1/5/156519c3ae.jpg",
+//     info: {
+//       sensorId: "Ps5SDF1156d",
+//       city: "Bairro de Fátima - São Luís",
+//       state:"MA",
+//       login: "27/10/2023",
+      
+//     },
+//     chart: {
+//       dataKey: [
+//         { name: "temp", color: "#82ca9d" },
+//         { name: "humidity", color: "#8884d8" },
+//       ],
+//       data: [
+//         {
+//           name: "Sun",
+//           temp: 37,
+//           humidity: 80,
+//         },
+//         {
+//           name: "Mon",
+//           temp: 38,
+//           humidity: 70,
+//         },
+//         {
+//           name: "Tue",
+//           temp: 35,
+//           humidity: 85,
+//         },
+//         {
+//           name: "Wed",
+//           temp: 29,
+//           humidity: 65,
+//         },
+//         {
+//           name: "Thu",
+//           temp: 42,
+//           humidity: 67,
+//         },
+//         {
+//           name: "Fri",
+//           temp: 36,
+//           humidity: 80,
+//         },
+//         {
+//           name: "Sat",
+//           temp: 35,
+//           humidity: 77,
+//         },
+//       ],
+//     },
+//     activities: [
+//       {
+//         text: "36 °C - 75%",
+//         time: "3 day ago",
+//       },
+//       {
+//         text: "35 °C - 67%",
+//         time: "1 week ago",
+//       },
+//       {
+//         text: "42 °C - 85%",
+//         time: "2 weeks ago",
+//       },
+//       {
+//         text: "37 °C - 60%",
+//         time: "1 month ago",
+//       },
+//       {
+//         text: "36 °C - 77%",
+//         time: "1 month ago",
+//       },
+//       {
+//         text: "40 °C - 80%",
+//         time: "2 months ago",
+//       },
+//     ],
+//   },
+
+//   {
+//     id: 2,
+//     title: "Sensor B",
+//     img: "https://www.makerhero.com/wp-content/uploads/2017/07/1AC01-9-1-min-300x300.jpeg",
+//     info: {
+//       sensorId: "5S0nN8nxRge",
+//       city: "Cohama - São Luís",
+//       state:"MA",
+//       login: "19/10/2023",
+
+//     },
+//     chart: {
+//       dataKey: [
+//         { name: "temp", color: "#82ca9d" },
+//         { name: "humidity", color: "#8884d8" },
+//       ],
+//       data: [
+//         {
+//           name: "Sun",
+//           temp: 40,
+//           humidity: 81,
+//         },
+//         {
+//           name: "Mon",
+//           temp: 35,
+//           humidity: 70,
+//         },
+//         {
+//           name: "Tue",
+//           temp: 35,
+//           humidity: 70,
+//         },
+//         {
+//           name: "Wed",
+//           temp: 39,
+//           humidity: 65,
+//         },
+//         {
+//           name: "Thu",
+//           temp: 42,
+//           humidity: 62,
+//         },
+//         {
+//           name: "Fri",
+//           temp: 34,
+//           humidity: 80,
+//         },
+//         {
+//           name: "Sat",
+//           temp: 35,
+//           humidity: 65,
+//         },
+//       ],
+//     },
+//     activities: [
+//       {
+//         text: "36 °C - 75%",
+//         time: "3 day ago",
+//       },
+//       {
+//         text: "35 °C - 67%",
+//         time: "1 week ago",
+//       },
+//       {
+//         text: "42 °C - 85%",
+//         time: "2 weeks ago",
+//       },
+//       {
+//         text: "37 °C - 60%",
+//         time: "1 month ago",
+//       },
+//       {
+//         text: "36 °C - 77%",
+//         time: "1 month ago",
+//       },
+//       {
+//         text: "40 °C - 80%",
+//         time: "2 months ago",
+//       },
+//     ],
+//   },
+// ];
