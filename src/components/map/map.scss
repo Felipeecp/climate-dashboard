@@ -1,0 +1,91 @@
+.mainMap{
+    display: flex;
+    padding: 10px;
+    align-content:center;
+    text-align:center;
+    justify-content:center;
+    height: 80vh;
+    background: linear-gradient(0.25turn,#e5f8e5, #DCDCDC);
+    .directions{
+      height:15vh;
+      width:auto;
+      position:absolute;
+      bottom:10vh;
+      right:10vh;
+    }
+    .map{
+      background-image: url(public/mapa2.png);
+      background-repeat: no-repeat;
+      background-position:center;
+      overflow: 'hidden';
+      min-width: 300px;
+      align-items: center;
+      justify-content: center;
+      min-width: 300px;
+      min-height: 265px;
+      margin:auto;
+      .grid{
+        display:flex;
+        .region{
+          overflow: hidden;
+          padding:0;
+          margin:auto;
+          height: 40px;
+          width: 40px;
+        }
+        #norte{
+          width: 22vh;
+          height:10vh;
+          position: relative;
+          bottom: -7vh;
+        }
+        #nordeste{
+          width:8vh;
+          height:10vh;
+          position: relative;
+          bottom:-7vh;
+          right: 3vh;;
+          border-top-right-radius: 50%;
+        }
+        #centro-oeste{
+          width: 8vh;
+          height:10vh;
+          position: relative;
+          bottom:-7vh;
+          left: 7vh;
+          border-bottom-right-radius: 70%;
+          border-bottom-left-radius: 70%;
+        }
+        #sudeste{
+          width: 7vh;
+          height:7vh;
+          position: relative;
+          bottom:-7vh;
+          margin-left:0;
+          border-top-left-radius: 10%;
+          border-bottom-right-radius: 20%;
+        }
+        #sul{
+          width: 4vh;
+          height: 7vh;
+          position:relative;
+          bottom:-7vh;      
+        }
+      }
+    }
+    
+    .list{
+      min-width: 200px;
+      display: inline;
+      border: 2px solid green;
+      border-radius: 20px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      p{
+        text-transform: capitalize;
+      }
+    }
+  }
+  
