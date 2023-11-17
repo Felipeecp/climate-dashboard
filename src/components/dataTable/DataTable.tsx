@@ -1,4 +1,5 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
+import { QueryClient, useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import "./dataTable.scss";
 
@@ -9,8 +10,21 @@ type Props = {
 };
 
 const DataTable = (props: Props) => {
-  const handleDelete = (id: number) => {
-    console.log(id + " deleted");
+  const queryClient = new QueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (id: string) => {
+      return fetch(`http://host.docker.internal:8080/client/${id}`, {
+        method: "DELETE",
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["allSensor"] });
+    },
+  });
+
+  const handleDelete = (id: string) => {
+    mutation.mutate(id);
   };
 
   const actionColumn: GridColDef = {
@@ -20,13 +34,13 @@ const DataTable = (props: Props) => {
     renderCell: (params) => {
       return (
         <div className="actions">
-          <Link to={`/${props.slug}/${params.row.id}`}>
+          <Link to={`/${props.slug}/${params.row.idDb}`}>
             <img
               src="https://raw.githubusercontent.com/Felipeecp/climate-dashboard/85611ebedf21271ee2ffc950b2a71267e563d824/view.svg"
               alt=""
             />
           </Link>
-          <div className="delete" onClick={() => handleDelete(params.row.id)}>
+          <div className="delete" onClick={() => handleDelete(params.row.idDb)}>
             <img
               src="https://raw.githubusercontent.com/Felipeecp/climate-dashboard/85611ebedf21271ee2ffc950b2a71267e563d824/delete.svg"
               alt=""
@@ -37,16 +51,18 @@ const DataTable = (props: Props) => {
     },
   };
 
+  let data = props.rows !== undefined ? props.rows : [];
+
   return (
     <div className="dataTable">
       <DataGrid
         className="dataGrid"
-        rows={props.rows}
+        rows={data}
         columns={[...props.columns, actionColumn]}
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 10,
             },
           },
         }}
@@ -57,7 +73,7 @@ const DataTable = (props: Props) => {
             quickFilterProps: { debounceMs: 500 },
           },
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[10]}
         checkboxSelection
         disableRowSelectionOnClick
         disableColumnFilter

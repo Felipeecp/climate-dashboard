@@ -737,19 +737,19 @@ export const pieChartData = [
   { name: "Frio e Úmido", value: 7, color: "#FF8042" },
 ];
 
-
 //adição de dados para exibir estaticamente
 export const singleSensor =
   {
-    id: 1,
-    title: "Sensor A",
+    title: "Sensor",
     img: "https://www.saravati.com.br/media/catalog/product/cache/ff61517d26ace703648229d56c081b52/1/5/156519c3ae.jpg",
     info: {
-      sensorId: "Ps5SDF1156d",
-      city: "Bairro de Fátima - São Luís",
-      state:"MA",
-      login: "27/10/2023",
-      
+      codWMO: "Ps5SDF1156d",
+      Cidade: "São Luís",
+      Estado:"MA",
+      "Data de criação": "27/10/2023",
+      latitude:"-28.513352",
+      longitude:"-53.98947",
+      altitude:"389",
     },
     chart: {
       dataKey: [

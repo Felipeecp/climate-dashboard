@@ -1,14 +1,17 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet, RouterProvider, createHashRouter } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
+import Avisos from "./pages/avisos/Avisos";
 import Home from "./pages/home/Home";
+import Locais from "./pages/locais/Locais";
 import Login from "./pages/login/Login";
 import Sensor from "./pages/sensors/Sensor";
-import "./styles/global.scss";
-import Locais from "./pages/locais/Locais";
-import Avisos from "./pages/avisos/Avisos";
 import SingleSensor from "./pages/singleSensor/SingleSensor";
+import "./styles/global.scss";
+
+const queryClient = new QueryClient();
 
 function App() {
   const Layout = () => {
@@ -20,7 +23,9 @@ function App() {
             <Menu />
           </div>
           <div className="contentContainer">
-            <Outlet />
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
           </div>
         </div>
         <Footer />
@@ -44,7 +49,7 @@ function App() {
         //rota para exibir as informações de cada sensor pelo ID
         {
           path: "/sensores/:id",
-          element: <SingleSensor  />,
+          element: <SingleSensor />,
         },
         {
           path: "/locais",
