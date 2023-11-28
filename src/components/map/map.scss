@@ -1,91 +1,95 @@
 .mainMap{
-    display: flex;
-    padding: 10px;
-    align-content:center;
-    text-align:center;
-    justify-content:center;
-    height: 80vh;
-    background: linear-gradient(0.25turn,#e5f8e5, #DCDCDC);
-    .directions{
-      height:15vh;
-      width:auto;
-      position:absolute;
-      bottom:10vh;
-      right:10vh;
-    }
-    .map{
-      background-image: url(public/mapa2.png);
-      background-repeat: no-repeat;
-      background-position:center;
-      overflow: 'hidden';
-      min-width: 300px;
-      align-items: center;
-      justify-content: center;
-      min-width: 300px;
-      min-height: 265px;
-      margin:auto;
-      .grid{
-        display:flex;
-        .region{
-          overflow: hidden;
-          padding:0;
-          margin:auto;
-          height: 40px;
-          width: 40px;
-        }
-        #norte{
-          width: 22vh;
-          height:10vh;
-          position: relative;
-          bottom: -7vh;
-        }
-        #nordeste{
-          width:8vh;
-          height:10vh;
-          position: relative;
-          bottom:-7vh;
-          right: 3vh;;
-          border-top-right-radius: 50%;
-        }
-        #centro-oeste{
-          width: 8vh;
-          height:10vh;
-          position: relative;
-          bottom:-7vh;
-          left: 7vh;
-          border-bottom-right-radius: 70%;
-          border-bottom-left-radius: 70%;
-        }
-        #sudeste{
-          width: 7vh;
-          height:7vh;
-          position: relative;
-          bottom:-7vh;
-          margin-left:0;
-          border-top-left-radius: 10%;
-          border-bottom-right-radius: 20%;
-        }
-        #sul{
-          width: 4vh;
-          height: 7vh;
-          position:relative;
-          bottom:-7vh;      
-        }
+  display: flex;
+  padding: 0px;
+  align-content:center;
+  text-align:center;
+  justify-content:center;
+  height: 100vh;
+  background: linear-gradient(0.25turn,#e5f8e5, #DCDCDC);
+  margin:0;
+  .directions{
+    height:10vh;
+    width:auto;
+    position:absolute;
+    bottom:5vh;
+    right:3vh;
+  }
+  .map{
+    background-image: url(public/mapa3.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    overflow: 'hidden';
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+    min-height: 352px;
+    margin:auto;
+    border: 1px solid red;
+    .grid{
+      display:flex;
+      .region{
+        overflow: hidden;
+        padding:0;
+        margin:auto;
+        height: 40px;
+        width: 40px;
       }
-    }
-    
-    .list{
-      min-width: 200px;
-      display: inline;
-      border: 2px solid green;
-      border-radius: 20px;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      p{
-        text-transform: capitalize;
+      #norte{
+        width: 28vh;
+        height:20vh;
+        position: relative;
+        top:0vh;
+        right:-3vh;
+        /*border: 1px solid red;*/
+      }
+      #nordeste{
+        width:15vh;
+        height:14vh;
+        position: relative;
+        top: 10vh;
+        right: 5vh;
+        /*border: 1px solid red;*/
+      }
+      #centro-oeste{
+        width: 19.5vh;
+        height:13vh;
+        position: relative;
+        bottom:0vh;
+        left:6.5vh;
+        /*border: 1px solid red;*/
+      }
+      #sudeste{
+        width: 10.4vh;
+        height:11vh;
+        position: relative;
+        bottom:-8vh;
+        left:-8vh;
+        /*border: 1px solid red;*/
+      }
+      #sul{
+        width: 7vh;
+        height: 9.1vh;
+        position:relative;
+        bottom:-7vh;     
+        /*border: 1px solid red;*/
       }
     }
   }
-  
+
+  .list{
+    min-width: 200px;
+    
+    display: inline;
+    border: 2px solid green;
+    border-radius: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding:0px;
+    p{
+      text-transform: capitalize;
+      color:black;
+    }
+  }
+}
