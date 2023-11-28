@@ -15,7 +15,7 @@ export const getTopBoxData = () => {
   const responseChartData = useQuery({
     queryKey: ["topSensorData"],
     queryFn: () =>
-      fetch("http://143.244.149.136:57655/client/topSensorByWmo")
+      fetch("http://ufmawmobr.online/client/topSensorByWmo")
         .then((res) => res.json())
         .then(mapToObject),
   });

@@ -3,7 +3,7 @@ import { Outlet, RouterProvider, createHashRouter } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
-import Avisos from "./pages/avisos/Avisos";
+import Avisos from "./pages/avisos/Card";
 import Home from "./pages/home/Home";
 import Locais from "./pages/locais/Locais";
 import Login from "./pages/login/Login";

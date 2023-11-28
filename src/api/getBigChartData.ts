@@ -6,7 +6,7 @@ export const getBigChartData = (codWmoA: string, codWmoB: string) => {
     queryKey: [`temperatures`],
     queryFn: () =>
       fetch(
-        `http://143.244.149.136:57655/client/sensorDetail/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
+        `http://ufmawmobr.online/client/sensorDetail/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
       ).then((res) => res.json()),
   });
 

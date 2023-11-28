@@ -30,7 +30,7 @@ const Sensor = () => {
   const { isPending, data } = useQuery({
     queryKey: ["allSensors"],
     queryFn: () =>
-      fetch("http://143.244.149.136:57655/client")
+      fetch("http://ufmawmobr.online/client")
         .then((res) => res.json())
         .then(mapToRowsData),
   });

@@ -7,7 +7,6 @@ const Locais = () => {
     <h1>Locais</h1>
     <Map/>
     </>
-    
   )
 };
 

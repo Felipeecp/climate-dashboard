@@ -14,7 +14,7 @@ const SingleSensor = () => {
   const { isPending, data, error } = useQuery({
     queryKey: ["singleSensor",id],
     queryFn: () =>
-      fetch(`http://143.244.149.136:57655/client/sensorData/${id}`)
+      fetch(`http://ufmawmobr.online/client/sensorData/${id}`)
         .then((res) => res.json())
         .then(mapToSingleSensor),
   });

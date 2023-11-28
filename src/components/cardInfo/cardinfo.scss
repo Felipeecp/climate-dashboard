@@ -1,0 +1,72 @@
+.cardInfo{
+  border-radius: 10px;
+  box-shadow:  3px 3px 5px black;
+  margin: auto;
+  padding:10px;
+  align-content:center;
+  justify-content:center;
+  text-align:center;
+  min-width: 50vh;
+  min-height: 55vh;
+  max-width: 300px;
+  max-height:600px;
+  
+}
+
+.cardInfo:hover{
+  scale: 1 1.03;
+  transition-duration: 1.5s;
+}
+
+.cardList{
+  list-style-type:none;
+  margin:auto;
+  padding:0;
+  justify-content:center;
+  
+}
+
+.cardPhoto{
+  border: 1px solid transparent;
+  box-shadow:  1px 2px 5px black;
+  border-radius: 50%;
+  width: 150px;
+  height:150px;
+  align-content:center;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+  padding:0;
+  vertical-align:middle;
+}
+
+
+.cardName{
+  font-size:20px;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  font-weight:bold;
+  margin: 20px 0;
+}
+
+.cardText{
+  font-size:16px;
+  font-family: sans-serif;
+  margin: 10px 0;
+  justify-content:center;
+  align-content:center;
+  align-items:center;
+}
+
+.cardDev{
+  text-transform:capitalize;
+  font-family:sans-serif;
+}
+
+.cardSocialMediaIcon{
+  width:30px;
+  margin:2px;
+}
+.minFont{
+  font-size:12px;
+}

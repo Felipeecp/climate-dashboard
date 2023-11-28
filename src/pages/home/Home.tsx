@@ -7,6 +7,7 @@ import { ChartBox } from "../../components/chartBox/ChartBox";
 import { PieChartBox } from "../../components/pieChartBox/PieChartBox";
 import { TopBox } from "../../components/topBox/TopBox";
 import "./home.scss";
+import { CharBoxData } from "../../model/CharBoxData";
 
 const Home = () => {
   const responseTopBoxData = getTopBoxData();
@@ -14,7 +15,7 @@ const Home = () => {
   let topSensorData =
     reponseTopSensorData !== undefined ? reponseTopSensorData : [];
 
-  const [bigChartData, setBigChartData] = useState(null);
+  const [_, setBigChartData] = useState(null);
 
   let codWmo = topSensorData.map((sensor) => sensor.wmo);
   let codWmoA = codWmo[0];
@@ -23,7 +24,7 @@ const Home = () => {
     queryKey: ["temperatures", codWmoA, codWmoB],
     queryFn: () =>
       fetch(
-        `http://143.244.149.136:57655/client/sensorDetail/ultimosDados/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
+        `http://ufmawmobr.online/client/sensorDetail/ultimosDados/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
       ).then((res) => res.json()),
     enabled: codWmoA !== undefined && codWmoB !== undefined,
   });
@@ -65,14 +66,14 @@ const Home = () => {
         {responseChartData1?.isPending ? (
           <h1>Loading...</h1>
         ) : (
-          <ChartBox {...responseChartData1?.data} />
+          <ChartBox {...responseChartData1?.data as CharBoxData} />
         )}
       </div>
       <div className="box box3">
         {responseChartData2?.isPending ? (
           <h1>Loading...</h1>
         ) : (
-          <ChartBox {...responseChartData2?.data} />
+          <ChartBox {...responseChartData2?.data  as CharBoxData} />
         )}
       </div>
       <div className="box box4">
@@ -82,14 +83,14 @@ const Home = () => {
         {responseChartData3?.isPending ? (
           <h1>Loading...</h1>
         ) : (
-          <ChartBox {...responseChartData3?.data} />
+          <ChartBox {...responseChartData3?.data  as CharBoxData} />
         )}
       </div>
       <div className="box box6">
         {responseChartData4?.isPending ? (
           <h1>Loading...</h1>
         ) : (
-          <ChartBox {...responseChartData4?.data} />
+          <ChartBox {...responseChartData4?.data  as CharBoxData} />
         )}
       </div>
       <div className="box box7">

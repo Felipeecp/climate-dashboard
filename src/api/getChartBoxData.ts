@@ -41,7 +41,7 @@ export const getChartData = (codWmo: string,cor:string) => {
     queryKey: [`ultimosDados${codWmo}`],
     queryFn: () =>
       fetch(
-        `http://143.244.149.136:57655/client/sensorDetail/ultimosDados/${codWmo}`
+        `http://ufmawmobr.online/client/sensorDetail/ultimosDados/${codWmo}`
       )
         .then((res) => res.json())
         .then(data => mapTochartBoxData(data, cor, codWmo)),

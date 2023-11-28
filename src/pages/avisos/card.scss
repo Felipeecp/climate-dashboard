@@ -1,0 +1,13 @@
+.avisos-container {
+  display: flex;
+  flex-direction: row; // Organiza os itens na horizontal
+  justify-content: center; // Centraliza os itens no eixo principal (horizontal)
+  align-items: center; // Centraliza os itens no eixo cruzado (vertical)
+  gap: 20px; // Espaçamento entre os cards
+  margin-top: 60px;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+}

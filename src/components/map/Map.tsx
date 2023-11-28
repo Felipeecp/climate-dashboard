@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import "./map.scss";
 import { AvarageMapDataResponse,AvaregeMapData } from "../../model/AvaregeMapData";
-import { set } from "date-fns";
 
 const processSensorData = (data:AvarageMapDataResponse[]):AvaregeMapData[] => {
   // Object to store the aggregated data
@@ -44,7 +43,7 @@ export default function Map() {
 
   const responseAvarageMaps = useQuery({
     queryKey: ["averageMaps"],
-    queryFn: () => fetch(`http://143.244.149.136:57655/client/findAverageMaps`).then(res => res.json()),
+    queryFn: () => fetch(`http://ufmawmobr.online/client/findAverageMaps`).then(res => res.json()),
   });
 
   // Armazene os dados processados em um estado
@@ -108,7 +107,16 @@ export default function Map() {
         </div>
       </div>
       <div className="list">
-        <Card variant="outlined" sx={{ minWidth: 400 }}>
+        {responseAvarageMaps.isPending ? (
+          <Card variant="outlined" sx={{ minWidth: 400 }}>
+            <CardContent>
+            <Typography variant="h5" component="div">
+              <p>Carregando...</p>
+            </Typography>
+            </CardContent>
+          </Card>
+        ) : (
+          <Card variant="outlined" sx={{ minWidth: 400 }}>
           <CardContent>
             <Typography variant="h5" component="div">
               <p>{id}</p>
@@ -123,6 +131,7 @@ export default function Map() {
             </Typography>
           </CardContent>
         </Card>
+        )}
       </div>
       <img className="directions" src="public/directions.png" />
     </div>

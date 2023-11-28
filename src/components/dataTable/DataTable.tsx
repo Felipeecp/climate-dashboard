@@ -1,5 +1,5 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
-import { QueryClient, useMutation, useQueryClient } from "@tanstack/react-query";
+import {useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import "./dataTable.scss";
 
@@ -14,13 +14,13 @@ const DataTable = (props: Props) => {
 
   const mutation = useMutation({
     mutationFn: (id: string) => {
-      return fetch(`http://143.244.149.136:57655/client/${id}`, {
+      return fetch(`http://ufmawmobr.online/client/${id}`, {
         method: "DELETE",
       });
     },
     onSuccess: () => {
       console.log("deletado");
-      queryClient.invalidateQueries(["allSensors"]);
+      queryClient.invalidateQueries(["allSensors"] as any);
     },
   });
 
