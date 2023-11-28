@@ -23,7 +23,7 @@ export const getPieChartData = () => {
     queryKey: [`climateData`],
     queryFn: () =>
       fetch(
-        `http://host.docker.internal:8080/client//sensorDetail/weatherClassification`
+        `http://143.244.149.136:57655/client/sensorDetail/weatherClassification`
       )
         .then((res) => res.json())
         .then(data => mapToPieChartData(data)),

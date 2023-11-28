@@ -1,94 +1,130 @@
-import './map.scss'
-import {useState} from 'react';
-import { Card,CardContent,Typography } from '@mui/material';
+import { Card, CardContent, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import "./map.scss";
+import { AvarageMapDataResponse,AvaregeMapData } from "../../model/AvaregeMapData";
+import { set } from "date-fns";
 
-export default function Map(){ 
-  const [id, setId] = useState('Região');
-  const [sensor,setSensor] = useState('Sensores');
-  const [info, setInfo] = useState('Frases Célebres');
-  const [author,setAuthor] = useState('Autores');
-  
-  const R = [
-    {
-      id: 'norte',
-      sensors:40,
-      info:'Na laranja e na couve...',
-      author:'Luiz Bacellar',
-    },
-    {
-      id:'nordeste',
-      sensors:60,
-      info:'Minha terra tem palmeiras...',
-      author:'Gonçalves Dias',
-    },
-    {
-      id:'centro-oeste',
-      sensors:20,
-      info:'Poeta não é somente o que escreve...',
-      author:'Cora Coralina',
-    },
-    {
-      id:'sudeste',
-      sensors:10,
-      info:'Tentei, porém nada fiz...',
-      author:'Cecília Meireles',
-    },
-    {
-      id:'sul',
-      sensors:15,
-      info:'Sonhar é acordar-se para dentro.',
-      author:'Mário Quintana',
+const processSensorData = (data:AvarageMapDataResponse[]):AvaregeMapData[] => {
+  // Object to store the aggregated data
+  const regionData = {} as any;
+
+  // Iterate over the data to aggregate it by region
+  data.forEach((item) => {
+    const region = item.region;
+    const sensors = item.totalSensor;
+    const { avgTemp, avgUmd } = item.detail[0];
+
+    // Initialize the region data if not present
+    if (!regionData[region]) {
+      regionData[region] = { totalSensors: 0, totalTemp: 0, totalUmd: 0, count: 0 };
     }
-  ];
-  function handleEnter(e) {
-    setId(e.target.id);
-    setSensor(R.find(item => item.id === e.target.id).sensors);
-    setInfo(R.find(item => item.id === e.target.id).info);
-    setAuthor(R.find(item => item.id === e.target.id).author);
-    
-  }
 
-  return(
-    <div className='mainMap'>
-      
-      <div className='map'>
-        
-        <div className='grid'>
-          <div className='region'  id='norte' onMouseEnter={handleEnter}></div>
-          <div className='region'  id='nordeste' onMouseEnter={handleEnter}></div>
+    // Aggregate the data
+    regionData[region].totalSensors += sensors;
+    regionData[region].totalTemp += avgTemp * sensors;
+    regionData[region].totalUmd += avgUmd * sensors;
+    regionData[region].count += sensors;
+  });
+
+  // Convert the aggregated data to the desired format
+  return Object.keys(regionData).map((region) => ({
+    id: region.toLowerCase(),
+    sensors: regionData[region].totalSensors,
+    avgTemperature: Number((regionData[region].totalTemp / regionData[region].count).toFixed(2)),
+    avgUmidity: Number((regionData[region].totalUmd / regionData[region].count).toFixed(2)),
+  }));
+};
+
+export default function Map() {
+ const [id, setId] = useState("Região");
+  const [sensors, setSensor] = useState(0);
+  const [avgTemperature, setAvgTemperature] = useState(0.0);
+  const [avgUmidity, setAvgUmidity] = useState(0.0);
+
+  const responseAvarageMaps = useQuery({
+    queryKey: ["averageMaps"],
+    queryFn: () => fetch(`http://143.244.149.136:57655/client/findAverageMaps`).then(res => res.json()),
+  });
+
+  // Armazene os dados processados em um estado
+  const [processedData, setProcessedData] = useState<AvaregeMapData[]>([]);
+
+  // Atualize os dados processados quando a resposta for recebida
+  useEffect(() => {
+    if (responseAvarageMaps.status === 'success') {
+      const data = processSensorData(responseAvarageMaps.data);
+      setProcessedData(data as AvaregeMapData[]);
+    }
+  }, [responseAvarageMaps.data, responseAvarageMaps.status]);
+
+  function handleEnter(e:any) {
+    const regionData = processedData.find(item => item.id === e.target.id);
+    console.log(regionData)
+    if (regionData) {
+      if(regionData.id === "n"){
+        setId("norte")
+      }
+      if(regionData.id === "ne"){
+        setId("nordeste")
+      }
+      if(regionData.id === "co"){
+        setId("centro-oeste")
+      }
+      if(regionData.id === "se"){
+        setId("sudeste")
+      }
+      if(regionData.id === "s"){
+        setId("sul")
+      }
+      setSensor(regionData.sensors);
+      setAvgTemperature(regionData.avgTemperature);
+      setAvgUmidity(regionData.avgUmidity);
+    }
+  }
+  
+  
+  return (
+    <div className="mainMap">
+      <div className="map">
+        <div className="grid">
+          <div className="region" id="n" onMouseEnter={handleEnter}></div>
+          <div
+            className="region"
+            id="ne"
+            onMouseEnter={handleEnter}
+          ></div>
         </div>
-        <div className='grid'>
-          <div className='region'  id='centro-oeste' onMouseEnter={handleEnter}></div>
-          <div className='region'  id='sudeste' onMouseEnter={handleEnter}></div>
+        <div className="grid">
+          <div
+            className="region"
+            id="co"
+            onMouseEnter={handleEnter}
+          ></div>
+          <div className="region" id="se" onMouseEnter={handleEnter}></div>
         </div>
-        <div className='grid'>
-          <div className='region'  id='sul' onMouseEnter={handleEnter}></div>
+        <div className="grid">
+          <div className="region" id="s" onMouseEnter={handleEnter}></div>
         </div>
-       
-    
       </div>
-      <div className='list'>
+      <div className="list">
         <Card variant="outlined" sx={{ minWidth: 400 }}>
           <CardContent>
-            
             <Typography variant="h5" component="div">
               <p>{id}</p>
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              Sensores Ativos: {sensor}
+              Sensores Ativos: {sensors}
             </Typography>
             <Typography variant="body2">
-              {info}
+              Temperatura média: {avgTemperature}
               <br />
-              {author}
+              Úmidade média: {avgUmidity}
             </Typography>
           </CardContent>
         </Card>
       </div>
-      <img className='directions' src='public/directions.png'/>
+      <img className="directions" src="public/directions.png" />
     </div>
-    
-
-    
   );
 }

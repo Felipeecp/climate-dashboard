@@ -1,5 +1,5 @@
 export const fetchSensors = () => {
-  fetch("http://host.docker.internal:8080/client").then((res) =>
+  fetch("http://143.244.149.136:57655/client").then((res) =>
     res.json()
   )
 }

@@ -18,7 +18,7 @@ const Add = (props: Props) => {
 
   const mutation = useMutation({
     mutationFn: (data: formDataType) => {
-      return fetch(`http://host.docker.internal:8080/client`, {
+      return fetch(`http://143.244.149.136:57655/client`, {
         method: "post",
         headers: {
           Accept: "application/json",

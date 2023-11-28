@@ -23,7 +23,7 @@ const Home = () => {
     queryKey: ["temperatures", codWmoA, codWmoB],
     queryFn: () =>
       fetch(
-        `http://host.docker.internal:8080/client/sensorDetail/ultimosDados/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
+        `http://143.244.149.136:57655/client/sensorDetail/ultimosDados/temperatures?sensorACode=${codWmoA}&sensorBCode=${codWmoB}`
       ).then((res) => res.json()),
     enabled: codWmoA !== undefined && codWmoB !== undefined,
   });

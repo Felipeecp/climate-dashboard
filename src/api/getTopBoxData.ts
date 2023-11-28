@@ -15,7 +15,7 @@ export const getTopBoxData = () => {
   const responseChartData = useQuery({
     queryKey: ["topSensorData"],
     queryFn: () =>
-      fetch("http://host.docker.internal:8080/client/topSensorByWmo")
+      fetch("http://143.244.149.136:57655/client/topSensorByWmo")
         .then((res) => res.json())
         .then(mapToObject),
   });

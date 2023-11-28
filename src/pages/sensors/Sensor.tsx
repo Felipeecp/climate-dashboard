@@ -30,7 +30,7 @@ const Sensor = () => {
   const { isPending, data } = useQuery({
     queryKey: ["allSensors"],
     queryFn: () =>
-      fetch("http://host.docker.internal:8080/client")
+      fetch("http://143.244.149.136:57655/client")
         .then((res) => res.json())
         .then(mapToRowsData),
   });

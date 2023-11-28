@@ -14,7 +14,7 @@ const DataTable = (props: Props) => {
 
   const mutation = useMutation({
     mutationFn: (id: string) => {
-      return fetch(`http://host.docker.internal:8080/client/${id}`, {
+      return fetch(`http://143.244.149.136:57655/client/${id}`, {
         method: "DELETE",
       });
     },

@@ -14,7 +14,7 @@ const SingleSensor = () => {
   const { isPending, data, error } = useQuery({
     queryKey: ["singleSensor",id],
     queryFn: () =>
-      fetch(`http://host.docker.internal:8080/client/sensorData/${id}`)
+      fetch(`http://143.244.149.136:57655/client/sensorData/${id}`)
         .then((res) => res.json())
         .then(mapToSingleSensor),
   });
