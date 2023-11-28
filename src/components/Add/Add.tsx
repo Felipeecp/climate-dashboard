@@ -1,5 +1,5 @@
 import { GridColDef } from "@mui/x-data-grid";
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQueryClient } from "@tanstack/react-query";
 import "./add.scss";
 
 type Props = {
@@ -14,7 +14,7 @@ interface formDataType {
 const responseBody: formDataType = {};
 
 const Add = (props: Props) => {
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: (data: formDataType) => {
@@ -28,7 +28,7 @@ const Add = (props: Props) => {
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["allSensor"] });
+      queryClient.invalidateQueries(["allSensors"]);
     },
   });
 

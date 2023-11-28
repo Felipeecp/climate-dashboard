@@ -3,14 +3,14 @@ import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 export const columns: GridColDef[] = [
   { field: "id", headerName: "Codigo do Sensor", width: 150 },
   {
-    field: "dataCriacao",
-    headerName: "Data de Criação",
-    width: 110,
+    field: "nameCity",
+    headerName: "Cidade",
+    width: 150,
     editable: true,
   },
   {
-    field: "cidade",
-    headerName: "Cidade",
+    field: "nameState",
+    headerName: "Estado",
     width: 150,
     editable: true,
   },
@@ -21,7 +21,7 @@ export const columns: GridColDef[] = [
     editable: true,
   },
   {
-    field: "regiao",
+    field: "region",
     headerName: "Região",
     width: 110,
     editable: true,
@@ -50,6 +50,6 @@ export const columns: GridColDef[] = [
     sortable: false,
     width: 200,
     valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.cidade || ""} - ${params.row.uf || ""}`,
+      `${params.row.nameCity || ""} - ${params.row.uf || ""}`,
   },
 ];

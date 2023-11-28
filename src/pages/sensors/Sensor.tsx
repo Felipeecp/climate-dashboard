@@ -3,7 +3,7 @@ import { useState } from "react";
 import Add from "../../components/Add/Add";
 import { columns } from "../../components/SensorTable/SensorColumns";
 import DataTable from "../../components/dataTable/DataTable";
-import { SensorEntity } from "../../model/Sensor.ts";
+import { SensorEntity } from "../../model/SensorModel.ts";
 import "./sensor.scss";
 
 const mapToRowsData = (apiResponse: SensorEntity[]) => {
@@ -11,9 +11,9 @@ const mapToRowsData = (apiResponse: SensorEntity[]) => {
     let novoObjeto = {
       id: objeto.wmo,
       idDb: objeto.id,
-      cidade: objeto.nameCity,
-      regiao: objeto.region,
-      dataCriacao: "09/11/2023",
+      nameCity: objeto.nameCity,
+      nameState: objeto.nameState,
+      region: objeto.region,
       uf: objeto.uf,
       latitude: objeto.latitude,
       longitude: objeto.longitude,
@@ -28,7 +28,7 @@ const Sensor = () => {
   const [open, setOpen] = useState(false);
 
   const { isPending, data } = useQuery({
-    queryKey: ["allSensor"],
+    queryKey: ["allSensors"],
     queryFn: () =>
       fetch("http://host.docker.internal:8080/client")
         .then((res) => res.json())
